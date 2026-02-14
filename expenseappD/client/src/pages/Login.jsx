@@ -12,7 +12,7 @@ const Login=()=>{
     const submitHandler=async(values)=>{
         try{
             setLoading(true);
-           const {data}= await axios.post('http://localhost:8080/api/v1/users/login',values);
+           const {data}= await axios.post('https://expense-management-system-z6nv.onrender.com/api/v1/users/login',values);
            setLoading(false);
            message.success('Login successful');
            localStorage.setItem('user',JSON.stringify({...data.user,password:''}));
@@ -50,4 +50,5 @@ const Login=()=>{
         </Form></div>
 )
 }
+
 export default Login;
